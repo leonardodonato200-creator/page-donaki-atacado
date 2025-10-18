@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Donaki • Proposta Atacado</title>
+  <meta name="description" content="Tabela de preços de atacado, consignado e condições comerciais da Donaki para revendedores." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b0b0c;
+      --card:#111114;
+      --muted:#9a9da3;
+      --text:#f4f5f6;
+      --line:rgba(255,255,255,.08);
+      --accent:#ffffff;
+      --accent-2:#cfcfcf;
+      --radius:18px;
+      --shadow:0 10px 30px rgba(0,0,0,.35);
+      --border:1px solid var(--line);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;color:var(--text);
+      background:radial-gradient(1200px 800px at 90% -10%,rgba(255,255,255,.05),transparent 60%),
+                 radial-gradient(900px 600px at -10% 110%,rgba(255,255,255,.04),transparent 60%),
+                 var(--bg);
+      line-height:1.45;
+    }
+    .wrap{max-width:1100px;margin:0 auto;padding:28px 18px 90px}
+    header{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin:8px 0 28px}
+    .brand{display:flex;align-items:center;gap:14px}
+    .logoBox{display:flex;align-items:center;gap:12px}
+    .logoDark,.logoLight{height:46px}.logoDark{display:none}
+    .brand h1{margin:0;font-family:"Bebas Neue",system-ui;letter-spacing:.5px;font-size:36px}
+    .pill{border:var(--border);padding:10px 14px;border-radius:999px;color:var(--muted);display:flex;gap:10px;align-items:center}
+    .pill b{color:var(--text)}
+    .card{background:var(--card);border:var(--border);border-radius:var(--radius);box-shadow:var(--shadow)}
+    .card.pad{padding:22px}
+    .title{font-size:28px;margin:4px 0 10px;font-weight:800}
+    .muted{color:var(--muted)}
+    .badge{display:inline-flex;gap:8px;align-items:center;background:rgba(255,255,255,.06);color:#fafafa;border:1px dashed rgba(255,255,255,.25);padding:8px 12px;border-radius:12px;font-weight:600}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:10px}
+    @media(max-width:900px){.grid{grid-template-columns:1fr}}
+    .priceCard{padding:18px;border-radius:16px;border:var(--border);background:linear-gradient(180deg,rgba(255,255,255,.02),transparent 55%),var(--card)}
+    .priceHead{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
+    .piece{font-weight:800;font-size:18px}
+    .chip{font-size:12px;color:#111;background:linear-gradient(135deg,var(--accent),var(--accent-2));padding:6px 10px;border-radius:999px;font-weight:800}
+    .money{font-size:38px;font-weight:900;letter-spacing:.2px;margin:10px 0}
+    .sub{color:var(--muted);font-size:13px}
+    .ctaRow{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+    .btn{appearance:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:10px;padding:14px 16px;border-radius:12px;font-weight:800}
+    .btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#111}
+    .btn.ghost{background:transparent;border:var(--border);color:var(--text)}
+    footer{margin-top:26px;color:var(--muted);font-size:12px}
+    @media print{.btn{display:none!important}.logoLight{display:none}.logoDark{display:block}}
+
+    /* Carousel */
+    .carousel{position:relative;height:320px;background:rgba(255,255,255,.02);border-top:var(--border)}
+    .carousel img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .5s ease}
+    .carousel img.active{opacity:1}
+    .car-dots{position:absolute;left:0;right:0;bottom:10px;display:flex;justify-content:center;gap:6px}
+    .car-dot{width:8px;height:8px;border-radius:999px;background:rgba(255,255,255,.35);border:1px solid rgba(255,255,255,.55)}
+    .car-dot.active{background:#fff}
+
+    /* Floating WA */
+    .floatWA{position:fixed;right:18px;bottom:18px;text-decoration:none}
+  </style>
+</head>
+<body>
+  <a class="btn primary floatWA" href="https://wa.me/5516997385557?text=Fala%2C%20Donaki!%20Quero%20fechar%20um%20pedido%20no%20atacado." target="_blank">WhatsApp</a>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logoBox">
+          <img class="logoLight" src="https://i.ibb.co/C55W0Kbs/" alt="Donaki Logo branca" onerror="this.style.display='none'">
+          <img class="logoDark" src="https://i.ibb.co/847HLsVv/" alt="Donaki Logo preta" onerror="this.style.display='none'">
+        </div>
+        <div>
+          <h1>DONAKI</h1>
+          <div class="muted">Proposta Comercial • ATACADO & CONSIGNADO</div>
+        </div>
+      </div>
+      <div class="pill"><span>Contato:</span> <b>+55 16 99738-5557</b></div>
+    </header>
+
+    <!-- Tabela Atacado -->
+    <section class="card pad">
+      <div class="badge">Tabela de Preços — Atacado</div>
+      <h2 class="title">Modelos e Valores</h2>
+      <div class="grid">
+        <div class="priceCard">
+          <div class="priceHead"><div class="piece">Oversized</div></div>
+          <div class="money">R$ 67,50 <span class="sub">Atacado</span></div>
+          <div class="sub">Sugestão de revenda: R$ 99,00</div>
+        </div>
+        <div class="priceCard">
+          <div class="priceHead"><div class="piece">Cropped</div></div>
+          <div class="money">R$ 46,00 <span class="sub">Atacado</span></div>
+          <div class="sub">Sugestão de revenda: R$ 69,00</div>
+        </div>
+        <div class="priceCard">
+          <div class="priceHead"><div class="piece">Básica</div></div>
+          <div class="money">R$ 46,00 <span class="sub">Atacado</span></div>
+          <div class="sub">Sugestão de revenda: R$ 69,00</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Condições -->
+    <section class="card pad" style="margin-top:16px">
+      <div class="badge">Condições Principais</div>
+      <ul class="list">
+        <li><b>Pedido mínimo:</b> 20 peças (podendo variar entre modelos e tamanhos).</li>
+        <li><b>Primeira compra:</b> 10 peças.</li>
+        <li><b>Prazo de produção:</b> de 10 a 20 dias úteis.</li>
+        <li><b>Pagamento:</b> realizado na entrega.</li>
+      </ul>
+      <div class="ctaRow">
+        <a class="btn primary" href="https://wa.me/5516997385557?text=Fala%2C%20Donaki!%20Quero%20fechar%20um%20pedido%20no%20atacado." target="_blank">Fechar pedido no WhatsApp</a>
+        <button class="btn ghost" onclick="window.print()">Imprimir / Salvar PDF</button>
+      </div>
+    </section>
+
+    <!-- Consignado -->
+    <section class="card pad" style="margin-top:16px">
+      <div class="badge">Opção Consignado</div>
+      <h2 class="title">Lucro por peça na revenda</h2>
+      <div class="grid">
+        <div class="priceCard">
+          <div class="priceHead"><div class="piece">Oversized</div></div>
+          <div class="money">Lucro: R$ 15,00 <span class="sub">(sobre preço de venda R$ 99,00)</span></div>
+          <div class="sub">Comissão de 15,2%</div>
+        </div>
+        <div class="priceCard">
+          <div class="priceHead"><div class="piece">Cropped</div></div>
+          <div class="money">Lucro: R$ 10,00 <span class="sub">(sobre preço de venda R$ 69,00)</span></div>
+          <div class="sub">Comissão de 14,5%</div>
+        </div>
+        <div class="priceCard">
+          <div class="priceHead"><div class="piece">Básica</div></div>
+          <div class="money">Lucro: R$ 10,00 <span class="sub">(sobre preço de venda R$ 69,00)</span></div>
+          <div class="sub">Comissão de 14,5%</div>
+        </div>
+      </div>
+    </section>
+
+  </div> <!-- /wrap -->
+
+  <!-- Galeria / Catálogo Visual -->
+  <section class="card pad" style="margin:16px auto; max-width:1100px">
+    <div class="badge">Catálogo Visual</div>
+    <h2 class="title" style="margin-top:8px">Peças em Destaque</h2>
+    <p class="muted" style="margin-top:-6px">*Rotação automática a cada 3s. Passe o mouse para pausar.</p>
+
+    <div class="grid" style="margin-top:14px">
+      <div class="priceCard" style="padding:0; overflow:hidden">
+        <div class="priceHead" style="padding:16px 18px"><div class="piece">Oversized</div></div>
+        <div class="carousel" id="car-oversized"></div>
+      </div>
+      <div class="priceCard" style="padding:0; overflow:hidden">
+        <div class="priceHead" style="padding:16px 18px"><div class="piece">Cropped</div></div>
+        <div class="carousel" id="car-cropped"></div>
+      </div>
+      <div class="priceCard" style="padding:0; overflow:hidden">
+        <div class="priceHead" style="padding:16px 18px"><div class="piece">Básica</div></div>
+        <div class="carousel" id="car-basica"></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="wrap">
+    <p>© <span id="year"></span> Donaki — origem, cultura de rua e identidade de quebrada.</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Imagens
+    const oversizedImgs = [
+      "https://dcdn-us.mitiendanube.com/stores/005/503/421/products/costas-88e7a426f30715a6ea17368022672708-1024-1024.webp",
+      "https://dcdn-us.mitiendanube.com/stores/005/503/421/products/over-branca-e-roxa-2-a61b23e7baae5d2c9c17470731560642-1024-1024.webp",
+      "https://dcdn-us.mitiendanube.com/stores/005/503/421/products/over-preta-e-roxa-2-7f85c26cdd8707871e17470730617516-1024-1024.webp",
+      "https://dcdn-us.mitiendanube.com/stores/005/503/421/products/costas-09d96087ff47e5034217368026830579-1024-1024.webp",
+      "https://dcdn-us.mitiendanube.com/stores/005/503/421/products/costas-3b96c750b1cd5ec86e17368025874933-640-0.webp",
+      "https://dcdn-us.mitiendanube.com/stores/005/503/421/products/costas-4e04fa7969a316694117368024921145-640-0.webp",
+    ];
+    const croppedImgs = [
+      "https://dcdn-us.mitiendanube.com/stores/005/503/421/products/costas-d65b43bfc2ea778bd117368823550278-1024-1024.webp",
+      "https://dcdn-us.mitiendanube.com/stores/005/503/421/products/costas-47b88fb32bd8b472a317369083965223-1024-1024.webp",
+    ];
+    const basicaImgs = [
+      "https://dcdn-us.mitiendanube.com/stores/005/503/421/products/costas-0821ee00c0230c1ed517326720755717-640-0.webp",
+      "https://dcdn-us.mitiendanube.com/stores/005/503/421/products/costas-eee157ae0786d3aec717368020220636-640-0.webp",
+      "https://dcdn-us.mitiendanube.com/stores/005/503/421/products/costas-fdbfec26568e8b06e017325014727165-640-0.webp",
+      "https://dcdn-us.mitiendanube.com/stores/005/503/421/products/base-preta-a84dc1070959e6fa2617470771004080-1024-1024.webp",
+      "https://dcdn-us.mitiendanube.com/stores/005/503/421/products/base-branca-15170387e5ecf8c8ef17470770453841-1024-1024.webp",
+      "https://dcdn-us.mitiendanube.com/stores/005/503/421/products/costas-f9f107b7a2cfd710a517326719923140-640-0.webp",
+      "https://dcdn-us.mitiendanube.com/stores/005/503/421/products/costas-e5b4b65a1faba144b917326719361933-640-0.webp",
+    ];
+
+    function makeCarousel(elId, urls){
+      const el = document.getElementById(elId);
+      if(!el) return;
+      if(!urls || !urls.length){
+        el.innerHTML = '<div style="display:grid;place-items:center;height:100%;color:var(--muted);font-size:14px">Sem imagens</div>';
+        return;
+      }
+      const imgs = urls.map((src,i)=>{
+        const img = document.createElement('img');
+        img.loading = 'lazy'; img.decoding = 'async';
+        img.src = src; img.alt = `Imagem ${i+1}`;
+        if(i===0) img.classList.add('active');
+        el.appendChild(img); return img;
+      });
+      const dots = document.createElement('div'); dots.className = 'car-dots';
+      const dotEls = urls.map((_,i)=>{
+        const d = document.createElement('span'); d.className = 'car-dot'+(i===0?' active':'');
+        dots.appendChild(d); return d;
+      });
+      el.appendChild(dots);
+
+      let idx = 0; let timer = null;
+      const go = (n)=>{
+        imgs[idx].classList.remove('active'); dotEls[idx].classList.remove('active');
+        idx = (n+imgs.length)%imgs.length;
+        imgs[idx].classList.add('active'); dotEls[idx].classList.add('active');
+      };
+      const start = ()=>{ timer = setInterval(()=>go(idx+1), 3000); };
+      const stop = ()=>{ if(timer){ clearInterval(timer); timer=null; } };
+      el.addEventListener('mouseenter', stop); el.addEventListener('mouseleave', start);
+      start();
+    }
+
+    makeCarousel('car-oversized', oversizedImgs);
+    makeCarousel('car-cropped',  croppedImgs);
+    makeCarousel('car-basica',   basicaImgs);
+  </script>
+</body>
+</html>
